@@ -1,6 +1,0 @@
-{
-  "name": "other",
-  "root": "apps/other",
-  "projectType": "library",
-  "targets": {}
-}

@@ -1,0 +1,7 @@
+{
+  "name": "vm1-gha8845-nx-proof",
+  "private": true,
+  "devDependencies": {
+    "nx": "22.1.3"
+  }
+}

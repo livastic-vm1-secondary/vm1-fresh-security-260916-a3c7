@@ -1,0 +1,6 @@
+{
+  "name": "critical",
+  "root": "apps/critical",
+  "projectType": "library",
+  "targets": {}
+}

@@ -1,5 +1,14 @@
+scopes:
+  source:
+    manual:
+
 pull_request_rules:
-  - name: VM1 fresh baseline
+  - name: VM1 GHA v25 external metadata scope impact
     conditions:
-      - -draft
-    actions: {}
+      - base = main
+      - author = livastic-vm1-secondary
+      - 'title = merge queue: VM1_GHA8845_SCOPE_IMPACT'
+      - -scope = critical
+      - label = vm1-gha8845-impact-trigger
+    actions:
+      merge: {}

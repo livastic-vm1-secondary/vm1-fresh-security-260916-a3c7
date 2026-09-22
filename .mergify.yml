@@ -1,22 +1,5 @@
-merge_queue:
-  max_parallel_checks: 1
-
-queue_rules:
-  - name: default
-    queue_conditions:
-      - check-success = vm1-inplace-timeout-guard
-    merge_conditions:
-      - check-success = vm1-inplace-timeout-guard
-    checks_timeout: 60 seconds
-    batch_size: 1
-    update_method: rebase
-    merge_method: merge
-
 pull_request_rules:
-  - name: VM1 inplace timeout regression
+  - name: VM1 fresh baseline
     conditions:
-      - title = VM1_INPLACE_TIMEOUT_260922
-      - check-success = vm1-inplace-timeout-guard
-    actions:
-      queue:
-        name: default
+      - -draft
+    actions: {}

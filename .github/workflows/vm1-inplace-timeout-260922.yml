@@ -1,0 +1,12 @@
+name: VM1 Inplace Timeout Regression
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  guard:
+    name: vm1-inplace-timeout-guard
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 120

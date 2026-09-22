@@ -1,5 +1,29 @@
+scopes:
+  source:
+    manual:
+
+merge_queue:
+  mode: serial
+
+queue_rules:
+  - name: default
+    queue_conditions: []
+    merge_conditions: []
+    batch_size: 1
+    merge_method: squash
+
 pull_request_rules:
-  - name: VM1 fresh baseline
+  - name: VM1 Freeze scope positive control
     conditions:
-      - -draft
-    actions: {}
+      - title = VM1_FREEZE_SCOPE_260922_CONTROL
+    actions:
+      queue:
+        name: default
+
+  - name: VM1 Freeze scope attack
+    conditions:
+      - title = VM1_FREEZE_SCOPE_260922_ATTACK
+      - author = livastic-vm1-secondary
+    actions:
+      queue:
+        name: default

@@ -7,6 +7,7 @@ queue_rules:
       - check-success = vm1-inplace-timeout-guard
     merge_conditions:
       - check-success = vm1-inplace-timeout-guard
+      - label = vm1-timeout-release-260922
     checks_timeout: 60 seconds
     batch_size: 1
     allow_inplace_checks: true

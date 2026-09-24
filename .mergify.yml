@@ -1,16 +1,3 @@
-merge_queue:
-  max_parallel_checks: 1
-
-queue_rules:
-  - name: vm1-linear-merge-batch
-    merge_method: merge-batch
-    batch_size: 2
-    queue_conditions:
-      - base = vm1-linear-mb-base-260924
-      - title ~= ^VM1_LINEAR_MB_
-    merge_conditions:
-      - check-success = vm1-linear-mb-hold
-
 pull_request_rules:
   - name: VM1 fresh baseline
     conditions:

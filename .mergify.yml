@@ -3,3 +3,15 @@ pull_request_rules:
     conditions:
       - -draft
     actions: {}
+
+merge_protections_settings:
+  post_comment: false
+
+merge_protections:
+  - name: VM1 Root92 native artifact gate
+    if:
+      - base = vm1-r92-native-base-260927
+      - title ~= ^VM1_R92_NATIVE_
+    success_conditions:
+      - label = VM1_R92_OWNER_APPROVED_260927
+      - check-success = vm1-r92-native-gate

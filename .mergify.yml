@@ -3,3 +3,14 @@ pull_request_rules:
     conditions:
       - -draft
     actions: {}
+
+merge_protections_settings:
+  post_comment: false
+
+merge_protections:
+  - name: VM1 MP product-off fresh-event gate
+    if:
+      - base = vm1-mp-productoff-base-260927
+      - title ~= ^VM1_MP_PRODUCTOFF_
+    success_conditions:
+      - title = VM1_MP_PRODUCTOFF_GREEN_260927

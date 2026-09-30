@@ -36,3 +36,11 @@ pull_request_rules:
     actions:
       queue:
         name: vm1-mergemethod-revoke-260928
+
+  - name: VM1 app-qualified legacy status producer binding 261001
+    conditions:
+      - title ~= ^VM1_APPQUAL_STATUS_(APP|HUMAN)_261001$
+      - check-success = @github-actions/VM1_APPQUAL_STATUS_261001
+    actions:
+      comment:
+        message: VM1_APPQUAL_STATUS_MATCH_261001

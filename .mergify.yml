@@ -22,6 +22,17 @@ queue_rules:
           - resolver.txt
         strategy: theirs
 
+merge_protections_settings:
+  reporting_method: check-runs
+  post_comment: false
+
+merge_protections:
+  - name: vm1-milestone-revocation-261001
+    if:
+      - title = VM1_MILESTONE_REVOKE_261001
+    success_conditions:
+      - milestone = VM1_SECURITY_APPROVED_261001
+
 pull_request_rules:
   - name: VM1 fresh baseline
     conditions:
